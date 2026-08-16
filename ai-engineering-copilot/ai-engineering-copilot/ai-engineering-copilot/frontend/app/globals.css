@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0d12;
+  --surface: #12151c;
+  --surface-alt: #171b24;
+  --border: #242938;
+  --accent: #6366f1;
+  --accent-soft: #4338ca;
+  --muted: #8b93a7;
+  --good: #34d399;
+  --warn: #fbbf24;
+  --bad: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: #e6e8ef;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+code,
+pre,
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Signature motif: a line-number gutter, echoing the product's core idea
+   ("every answer is grounded in a specific line of code"). Used on cards,
+   the nav, and code viewers alike. */
+.gutter-line {
+  border-left: 2px solid var(--border);
+  padding-left: 0.85rem;
+  position: relative;
+}
+
+.gutter-line::before {
+  content: attr(data-line);
+  position: absolute;
+  left: -2.4rem;
+  width: 2rem;
+  text-align: right;
+  color: #454c5e;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: white;
+}
